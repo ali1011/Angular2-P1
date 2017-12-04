@@ -1,0 +1,8 @@
+<form #itemForm="ngForm">
+    <input [(ngModel)]="newItem.reference" name="reference" minlength="5" required #reference="ngModel" />
+    <span [hidden]="reference.valid || reference.pristine">champ non valid</span>
+    <input [(ngModel)]="newItem.name" name="name" required/>
+    <input [(ngModel)]="newItem.state" name="state" required/>
+
+    <button [disabled]="!itemForm.form.valid" (click)="createObject()">Ajouter Object</button>
+</form>

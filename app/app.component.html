@@ -1,0 +1,10 @@
+<h1>{{title}} </h1>
+<p>{{text}} </p>
+<input #listFilter (keyup)='0' >
+<hr>
+<itemForm (onCreateObject)="OnCreateObjectApp($event)"></itemForm>
+{{newItem | json}} 
+
+<div *ngFor="let item of collection | itemFilter: listFilter.value ">
+    <item [item]="item" (onGetDetails)="OnGetDetailsApp($event)" ></item> 
+</div>
